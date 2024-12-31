@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>清除标签默认样式</title>
+    <style>
+      /* 方法1：*通配符选择器 方法2：并集选择器 */
+      * {
+        margin: 10px;
+        /* 外边距为0时将不可见序列样式 */
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+        /* 清楚序列样式 */
+      }
+      .over {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        color: orange;
+        /* overflow: hidden; */
+        /* 溢出盒子自动隐藏 */
+        overflow: scroll;
+        /* 溢出滚出，无论是否溢出都显示滚轮 */
+        /* overflow: auto; */
+        /* 只有溢出才显示滚轮/常用形式 */
+      }
+      .dbj {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 50px;
+        background-color: orange;
+      }
+      .xbj {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background-color: pink;
+        /* 当两个盒子垂直排列相邻时，盒子间距等于外边距等于两者中较大者 */
+      }
+      /* 外边距塌陷问题：父子级的标签，子集的添加上外边距会产生，导致父级一起向下移动,两者粘在一起移动距离和子级外上边距一致 */
+      .son {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 0px;
+        margin-top: 50px;
+      }
+      .father {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 0px;
+      }
+      /* 解决塌陷问题：法1：删除子集外边距添加相应的父级内边距；法2：父级设置overflow:hidden或者boeder-top  */
+      .son1 {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        margin: 0px;
+        margin-top: 50px;
+      }
+      .father1 {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 0px;
+        /* padding-top: 50px; */
+        /* overflow: hidden; */
+        border-top: 1px solid black;
+        /* 后两者原理都是让父级找到自己的边缘，但第三种还会撑大盒子，要么还要添加内减 */
+      }
+      span {
+        height: 100px;
+        border-radius: 50px;
+        /* 设置圆角时，设置的大小可以添加四个值，值也可以是百分比表示角度的半径为直径的比例，因此最大50%，超过50%记为50%，设置多个角度时候顺序为左上开始顺时针旋转，不够四个值取对角，类似边框的设置 */
+        /* 如果想变成胶囊装，不应该用50%，那样是椭圆，胶囊而是短边直径的一半边 */
+        margin: 50px;
+        padding: 50px;
+        line-height: 100px;
+        /* 行内元素的垂直距离无法改变，但是可以通过改变行高来实现，这里行高得是需要的外边距的两倍 */
+        box-shadow: 20px 50px 100px 1px rgba(0, 0, 0, 0.5) inset;
+        /* 盒子阴影效果：填值顺序x轴偏移，y轴偏移，模糊半径，扩散半径，颜色，内外阴影 */
+        /* 其中xy必须书写，默认是外阴影 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>主要标签</h1>
+    <h2>副标签</h2>
+    <p>段落</p>
+    <ol>
+      <li>类1</li>
+      <li>类2</li>
+      <li>类3</li>
+    </ol>
+    <br />
+    <div>
+      <p class="over">
+        “看来，你就是这里的族长吧，我已经恭候多时了，我知道你对这片土地爱的深沉，可是，战争已经开始了，我们会成为战争的牺牲品，不要固执了，快带领你的族人逃吧！”大祭司表情凝重，不时看着天空，他似乎对一切了如指掌。族长看了身边的同伴，并且讲起了那个传说，一直流传牧羊人之中的歌谣：当大地开始颤抖，天空发出撕裂的巨响，洪水猛兽般从天而降，淹没了大地和一切生灵。一头白狼带领族人和一些生物躲到地下，它是富有灵性的神明，洪水退去后教会人们放牧种植，人们不再需要冒着危险狩猎。它自称是人类的朋友，有一天，它要离开了，临走前嘱咐人们守护这里的环山，它只是说地下藏着毁灭世界的力量。然后这个故事一直流传到这一代，白狼再也没有出现。人们只知道它来自天狼星，也许它也回家了吧。族长表明了自己的坚决，他不会离开家的。而大祭司却哈哈大笑起来，“看来，你们对一切还是一无所知，这个宇宙的真相，你们不过是一群蝼蚁，生命对他们而言，不过是可以玩弄的工具。”大祭司撕下老者的面具，人皮下露出一头老犬的身形，“我已经替他们工作了许久，替他们监视这个星球便是我的使命，我的家乡回不去了，我也不过是他们的工具，我已经受够了所谓的阶级，当他们将我的家乡说毁就毁了时，我已经认识到我们是一样的底层渺小的生命，现在我站你们这边，快逃吧，山下的武器一定会是他们的争夺的焦点。”老犬语重心长，放下姿态，让众人相信他。那一刻，人们害怕认识到自己的渺小。
+      </p>
+    </div>
+    <div class="dbj">大外边距</div>
+    <div class="xbj">小外边距</div>
+    <div class="father"><div class="son"></div></div>
+    <br /><br />
+    <div class="father1"><div class="son1"></div></div>
+    <br />
+    <span style="color: pink; background-color: orange">行内元素</span>
+  </body>
+</html>

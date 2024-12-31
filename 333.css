@@ -1,0 +1,49 @@
+.aoe {
+  width: 400px;
+  height: 400px;
+  background: pink url(./下载.jpg) no-repeat bottom/contain fixed;
+  display: inline-block;
+  /* display将标签属性更改为想要的行内块属性,对应的还有块:block和inline行内元素 */
+}
+li:nth-child(2n - 1) {
+  background-color: pink;
+}
+/* 结构伪类选择器可以将相同标签不同序列的元素分开进行选择添加样式,(可以是函数,如果是函数n从0开始的整数也可以是具体的数字) */
+/* last-child和first-child用到的比较少,一般用nth */
+.wei {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  padding: auto;
+  /* 自适应 */
+  /* 内边距:使得文字内容与边框线产生边距,会撑大盒子大小 */
+  /* 内边距属性可以复合编辑，根据内容的数量决定含有，四个时按从上的顺时针注释，三个值同理但左右重合在一起,同理两个是上下/右左 */
+  border: 1px dashed green;
+  /* 边框线,粗细,样式,颜色 ,边框线大小不影响盒子大小,由原本大小取出一部分变成*/
+  /* 常用样式实线 solid虚线 dashed 点线 dotted */
+  border-top: 2px solid yellow;
+  border-bottom: 2px dotted blue;
+  /* 加上方向名词可对边框进行单独编辑 */
+  box-sizing: border-box;
+  /* 内减模式，自动计算内边距等情况对盒子的撑大减少到盒子整体的大小上，不影响最终尺寸 */
+  margin: auto;
+  /* 外边距用来隔开两个盒子 */
+  /* 不会撑大盒子盒子大小 */
+  /* 和padding的填值写法类似 */
+  /* 填写auto自适应后，能使得版心居中/前提必须有盒子宽度，负责盒子宽度和视窗大小一致 */
+}
+.wei::after {
+  width: 50px;
+  height: 50px;
+  color: orange;
+  content: "的回忆";
+}
+.wei::before {
+  width: 60px;
+  height: 60px;
+  color: green;
+  background-color: yellow;
+  content: "我们";
+  display: inline-block;
+}
+/* 伪元素选择器可以在标签前后添加修饰,默认格式为inline行内元素不可修改大小需要display,添加格式如上 */

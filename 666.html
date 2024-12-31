@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin: 50px auto;
+        padding: 0px;
+      }
+      ul {
+        width: 900px;
+        height: 250px;
+        background-color: yellow;
+        /* 子级如果添加浮动属性而父级的高度没有设置容易导致页面错乱，即脱标 */
+      }
+      li {
+        list-style: none;
+        width: 200px;
+        height: 100px;
+        background-color: pink;
+        margin: 10px;
+        margin-right: 20px;
+        float: left;
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+      li:nth-child(4n) {
+        margin-right: auto;
+      }
+      /* 清楚浮动的方法1：在父级元素内容的最后添加一个块级元素，设置css属性clear:both */
+      /* 这里1和2在同一父级，而3本应该在下面因为没有为父级添加高限制3导致浮动脱标 */
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        float: right;
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        float: left;
+      }
+      .box3 {
+        width: 1000px;
+        height: 50px;
+        background-color: red;
+      }
+      .fabox {
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="fabox">
+      <div class="box1"></div>
+      <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+  </body>
+</html>

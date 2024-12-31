@@ -1,0 +1,56 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  transition: 10s;
+  font-size: 100;
+}
+.box:active {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+}
+/* 伪类选择器选择器：hover/:active;前者是鼠标悬停后者是点击 ,额外还有link和visited表示访问前后访问后 ###如果要设置四种状态要按逻辑来，LVHA的顺序来*/
+div span {
+  color: #d210af;
+}
+/* 复合选择器中后代选择器将父子集里面所有后代包括孙子等 */
+/* 空格中添加>号时只选择儿子级别 */
+div,
+span,
+p {
+  font-style: italic;
+}
+/* 并集选择器用逗号换行将多个标签进行设置 */
+p.min {
+  background-color: #0bfa17;
+}
+/* 交集选择器，对同时含两种属性，即是p标签又是min类,相比传统的类标签，需要一个交集即p的前置 */
+/* css三个特性1。先看子代有没有再往上看父代2. 由于代码被机器读取是从上往下读取执行的，如果有相同属性冲突重复过了例如对同一标签p的颜色两次编辑，最终展示的会是后编辑的属性这点也和第一条的原理一致。不是只执行一个而是后执行的覆盖先执行的3.权重规则：选择器的默认范围越大权重越小，*通配符<标签<class类标签<#id<行内的自定义格式styple<!important（额外声明，希望哪个css生效就添加可以使其最高表现） */
+/*  对于复合选择器，按照优先级个数比较，同一优先级个数一致再比较下一级，这里还有继承权重是最低的，先看子代标签已有的Css最后才生效父代的，@@@如果在父代的权重加important,只是在当前父代权重最高，继承cheng最高权重依旧不如子代自己的权重高*/
+.bjt {
+  width: 400px;
+  height: 400px;
+  background-color: pink;
+  background-image: url(./下载.jpg);
+  /* 背景图片默认平铺，并且在盒子最底层 */
+  background-repeat: no-repeat;
+  /* repeat:平铺，repeat+x:水平平铺，+y垂直平铺 */
+  background-position: bottom;
+  /* 调整图片在背景中的位置时，由两部分(左右)+（speace） (上下)
+  其中center既可以表示上下位置也可以表示左右位置，当位置关键词只有一个时，未标注的默认的center,只有一个数字时，只表示左右宁外一个是center.也可以用数字+px表示具体位置
+  而默认初始0+0是左上角，取负数时向左上移动，超出盒子范围不显示 */
+  background-size: cover;
+  /* cover:全覆盖不改变图片的比列，因此可能存在图片缺失；contain:Xy等比例放入（如果都是正方形则能覆盖，否则会存在空白）；百分比 100%和cover属性一致，也不改变比例*/
+  background-attachment: fixed;
+  /* 作用：使得背景图片固定，默认是不固定的，当内容过多滚动时，背景图片不会随之滚动而是始终在浏览窗中间不动 */
+}
+.aoe {
+  width: 2000px;
+  height: 400px;
+  background: pink url(./下载.jpg) no-repeat bottom/10% fixed;
+  /* 这个是类似font文字的简写方式按顺序格式添加属性 */
+  /* 注意背景图片如果要增加固定特性的时候前置的平铺方式要用cover和100%才能正常显示背景图片 */
+  /* fixed控制的图片的定位和视觉窗口有关而不是类选择器选择的标签的块的大小,当设置的大小过小会出现图片在块的外面的情况 */
+}

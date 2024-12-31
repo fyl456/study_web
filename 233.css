@@ -1,0 +1,72 @@
+p{
+    color: #df1717;
+}
+.red{
+    color: #1bc041;
+}
+.size{
+    font-size: 50px;
+}
+#id{
+    color: #570adc;
+}
+*{
+    color: #efdf04;
+}
+.he1{
+    font-size: 16px;
+    width: 100px;
+    height: 100px;
+    background: #b7ce05;
+}
+.he2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    width: 200px;
+    height: 200px;
+    background: #d60c67;
+}
+.he3{
+    font-style: italic;
+    line-height: 2;
+    /* 行高为倍数而不是具体像素则为当前字体像素的倍数 注意：行高值由上间距下间距和文本高度组成，因此倍数为2时，行间距刚好是字体的大小*/
+    font-size: 32px;
+    text-indent: 2em;
+    /* em表示缩进当前标签的字号的倍数，而px表示具体缩进的大小 */
+}
+.he4{
+    background-color: blue;
+    width: 100px;
+    line-height: 100px;
+    /* 行间距和该盒子区域高度一致则为居中,这里也说明行上下间距是一致的 ，而且只能单行文字能实现该功能*/
+    font-family: 楷体;
+    /* 字体一般可以写多个在代码中执行按左到右优先查找电脑里面的字体最后默认字体 ，最后默认字体一般用无衬线字体*/
+}
+.he5{
+    /* 开发初期可以用默认初始开发格式font（复合属性）来设置多个属性 */
+    font: italic 700 32px/2 楷体;
+    /* 按顺序：倾斜 加粗 字号/行高 字体 ；其中字号字体必写，佛则该属性font不生效  */
+    text-align: center;
+    /* 居中对齐；left: 左对齐;right:右对齐 ; 该调整只影响text内容而不是盒子的对齐*/
+}
+.a{
+    text-decoration: none;
+}
+.b{
+    text-decoration: underline;
+    color: rgb(0, 255, 0);
+    /* 三原色写法取值0到255 */
+}
+.c{
+    text-decoration: line-through;
+    color: rgba(59, 9, 240, 0.2);
+    /* 添加一个透明度取值0到1数值越小越透明 */
+    background-color: #09e574;
+}
+.d{
+    color: #fc0;
+    /* 16进制写法如果有重复重新可简写如ffcc00简写fc0 */
+    text-decoration: overline line-through underline; 
+    /* 可叠加三种划线 */
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浮动和flex布局</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .one {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(0, 0, 1, 0.5);
+        float: left;
+        /* 添加float: 浮动属性能让块元素在同一行对齐;特点：顶对齐。具备行内块显示模式特点，但是区别于标准流即常规的标签决定的显示模式，会导致不在一个图层的重叠，即如果同一行存在未添加float属性的块会按照标准流形式在左侧对齐并且不会换行，使得二者重合 ，因此浮动流的标签会”脱标“，最好在同一个大盒子内的所有小盒子要么就都添加浮动*/
+        /* 这里我添加了透明度使得能够看见重叠的元素 */
+      }
+      .two {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        float: left;
+      }
+      .three {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        float: right;
+      }
+      .four {
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        /* float: right; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+  </body>
+</html>
